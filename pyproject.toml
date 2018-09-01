@@ -1,0 +1,4 @@
+[tool.towncrier]
+    package = "source"
+    filename = "news.rst"
+    title_format = "Python Packaging User Guide {version} ({project_date})"
