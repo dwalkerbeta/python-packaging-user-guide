@@ -5,9 +5,9 @@
     issue_format = ":pr:`{issue}`"
     underlines = ["-", "~"]
 
-    [[tool.towncrier.type]]
-        directory = "bugfix"
-        name = "Bugfixes"
+   [[tool.towncrier.type]]
+        directory = "new"
+        name = "New Pages"
         showcontent = true
 
     [[tool.towncrier.type]]
@@ -16,18 +16,13 @@
         showcontent = true
 
     [[tool.towncrier.type]]
-        directory = "new"
-        name = "New Pages"
-        showcontent = true
-
-    [[tool.towncrier.type]]
-        directory = "doc"
-        name = "Improved Documentation"
-        showcontent = true
-
-    [[tool.towncrier.type]]
         directory = "removal"
         name = "Removals"
+        showcontent = true
+
+    [[tool.towncrier.type]]
+        directory = "bugfix"
+        name = "Bugfixes"
         showcontent = true
 
     [[tool.towncrier.type]]
