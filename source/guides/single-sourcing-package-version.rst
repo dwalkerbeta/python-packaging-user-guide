@@ -40,23 +40,13 @@ number of your project:
     offers an API that both locations can use.
 
     Few tools you could use, in no particular order, and not necessarily complete:
-    `bumpversion <https://pypi.org/project/bumpversion>`_,
+    `bump2version <https://pypi.org/project/bump2version>`_,
     `changes <https://pypi.org/project/changes>`_, `zest.releaser <https://pypi.org/project/zest.releaser>`_.
 
 
 #.  Set the value to a ``__version__`` global variable in a dedicated module in
     your project (e.g. :file:`version.py`), then have :file:`setup.py` read and
     ``exec`` the value into a variable.
-
-    Using ``execfile``:
-
-    ::
-
-        execfile('...sample/version.py')
-        # now we have a `__version__` variable
-        # later on we use: __version__
-
-    Using ``exec``:
 
     ::
 
@@ -65,7 +55,7 @@ number of your project:
             exec(fp.read(), version)
         # later on we use: version['__version__']
 
-    Example using this technique: `warehouse <https://github.com/pypa/warehouse/blob/master/warehouse/__about__.py>`_.
+    Example using this technique: `warehouse <https://github.com/pypa/warehouse/blob/64ca42e42d5613c8339b3ec5e1cb7765c6b23083/warehouse/__about__.py>`_.
 
 #.  Place the value in a simple ``VERSION`` text file and have both
     :file:`setup.py` and the project code read it.
@@ -96,6 +86,8 @@ number of your project:
     installation metadata, which is not necessarily the code that's currently
     imported.
 
+    Example using this technique: `setuptools <https://github.com/pypa/setuptools/blob/master/setuptools/version.py>`_.
+
 
 #.  Set the value to ``__version__`` in ``sample/__init__.py`` and import
     ``sample`` in :file:`setup.py`.
@@ -109,10 +101,12 @@ number of your project:
             ...
         )
 
-    Although this technique is common, beware that it will fail if
-    ``sample/__init__.py`` imports packages from ``install_requires``
-    dependencies, which will very likely not be installed yet when
-    :file:`setup.py` is run.
+    .. warning::
+
+        Although this technique is common, beware that it will fail if
+        ``sample/__init__.py`` imports packages from ``install_requires``
+        dependencies, which will very likely not be installed yet when
+        :file:`setup.py` is run.
 
 
 #.  Keep the version number in the tags of a version control system (Git, Mercurial, etc)

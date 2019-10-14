@@ -53,7 +53,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Python Packaging User Guide'
-copyright = u'2013–2017, PyPA'
+copyright = u'2013–2019, PyPA'
 author = 'Python Packaging Authority'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -354,7 +354,6 @@ texinfo_documents = [
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3.6', None),
     'pip': ('https://pip.pypa.io/en/latest/', None),
-    'pypa': ('https://pypa.io/en/latest/', None),
 }
 
 
